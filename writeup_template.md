@@ -20,7 +20,7 @@ I've added a minimum amount of Gaussian blur to get rid of noise. If too much Ga
 * Step 3: Apply Canny edge detection
 We perform canny edge detection on the image to intensify the edges of the image and reduce the threshold. I've optimized the parameters for thresholding which is required to decide which edges are relevant.
 
-[image3]: ./test_examples/canny_edge.jpg "Canny Edge"
+[image3]: ./test_examples/canny.jpg "Canny Edge"
 
 * Step 4: Getting region of interest
 I only care about the region of interest so I've marked out a polygon which helps me isolate only the lane lines that I'm considering.
@@ -40,7 +40,7 @@ Hough transform returned a collection of points, each tuple representing a line 
 Original draw_lines function took result of Hough transform and recreated those points on the image. This resulted in multiple small lines on the image which was sufficient for the first iteration.
 
 
-[image5]: ./test_examples/draw_lines_1.jpg "Draw Lines 1"
+[image5]: ./test_examples/hough.jpg "Draw Lines 1"
 
 
 My next task involved averaging and extrapolating out these lines. I proceeded with a simple brute force approach which involved
@@ -64,7 +64,6 @@ Below is the resultant image -
 
 Finally we superimpose the result of Hough Transform on the original image to display our frames.
 
-[image5]: ./test_examples/final.jpg "Final Image"
 
 
 ### 2. Identify potential shortcomings with your current pipeline
